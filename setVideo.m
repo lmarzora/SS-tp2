@@ -9,7 +9,7 @@ for k = 0:frames
 	frameFileName = [frameFile num2str(k) ".png"];
 	img = imread(frameFileName);
 	img = im2double(img);
-	for f = 1:5
+	for f = 1:10
 		addframe(video,img);
 	endfor
 endfor	

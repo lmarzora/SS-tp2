@@ -1,4 +1,4 @@
-function getFrames(staticFileName,frameFile,t_init,t_end)
+function getFrames(staticFileName,frameFile,t_init,t_end,pid)
 
 	printf("getting animation frames\n");
 	pkg load image
@@ -10,6 +10,7 @@ function getFrames(staticFileName,frameFile,t_init,t_end)
 	
 	
 	[stats, L, N] = getStats(staticFileName);
+	stats(pid,2) = 2;
 	t = t_init;
 	while t <= t_end 
 		dynamicFileName = ["./Data/dynamicFile" "_" num2str(N) "_" num2str(L) "_" num2str(t) ".txt"];

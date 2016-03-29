@@ -4,11 +4,11 @@ function generateRandomSet(outputStaticFile,outputDynamicFile,N,L,t)
 	positions = unifrnd(0,L,N,2);
 
 	#generates random exponential radius
-	radius = exprnd(1,N,1);
-
+	#radius = exprnd(1,N,1);
+	radius = ones(1,N);
 	#generates random normal x y velocity 
 
-	velocity = normrnd(0,1,N,2);
+	velocity = normrnd(0,0.1,N,2);
 	particles = [positions,velocity];
 	dlmwrite(outputDynamicFile,t);
 	dlmwrite(outputDynamicFile,particles,"-append");
